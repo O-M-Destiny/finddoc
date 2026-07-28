@@ -1,0 +1,4 @@
+An image is attached to this content. The text above was extracted from that image via OCR.
+Use the text to describe what the image is about and what information it contains.
+If the text is too garbled or short to be meaningful, ignore it and do not describe the image.
+Do not add disclaimers about missing information. Just describe what the text tells you.

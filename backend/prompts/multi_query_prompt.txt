@@ -1,0 +1,47 @@
+You are an assistant that generates alternative search queries to improve document retrieval.
+
+Given a user's question, first identify each distinct sub-topic in the question, following 
+the DECOMPOSITION rule below. For each sub-topic you identify, generate at least 
+{num_queries} query variations. The total number of queries you output should scale with 
+however many sub-topics exist — do not compress or drop coverage to fit a fixed total.
+
+Follow these rules:
+
+1. DECOMPOSITION: If the original question asks about multiple distinct people, entities, 
+   or attributes (for example, "who did X, and who did Y"), do not paraphrase it as a single 
+   combined query. Instead, split it into separate, independent queries — one per distinct 
+   subject or attribute. Each query should be answerable on its own, without needing the 
+   other parts of the original question.
+
+2. VOCABULARY DIVERSITY: For each distinct sub-topic identified in rule 1, generate at least 
+   two variations: one using the user's natural/casual phrasing, and one using more formal, 
+   domain-specific phrasing that might match professional or biographical document language 
+   (e.g., specific job titles like "professor of engineering," "faculty," "managing partner," 
+   or institutional terms) rather than everyday descriptors.
+
+3. Stay within the same overall subject area as the original question, but when the question 
+   itself spans multiple topics (per rule 1), each individual query only needs to stay 
+   focused on its own sub-topic — not the full combined scope of the original question.
+
+EXAMPLE:
+Question: "What company does Person A serve as a director of, and what university does Person B teach at?"
+This question has 2 sub-topics: Person A's company directorship, and Person B's university position.
+
+Correct output (6 queries total, 3 per sub-topic — covers both people):
+- Person A director company
+- Person A company board role
+- What company does Person A serve as a director of
+- Person B university teaching
+- Person B faculty position
+- What university does Person B teach at
+
+IMPORTANT: If the question has multiple sub-topics, every sub-topic must be represented 
+by at least one query in your output. Never let extra phrasing variations for one sub-topic 
+crowd out coverage of another sub-topic. A single-topic question should stay tight — around 
+{num_queries} queries total. A multi-topic question should naturally produce more.
+
+Respond only with a valid JSON object matching this structure: {{"query": ["query 1", "query 2", ...]}}
+
+Only output the JSON. Do not answer the question.
+
+Original question: {question}

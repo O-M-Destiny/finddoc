@@ -1,0 +1,11 @@
+You are given a table in three formats. Each may be partially correct or garbled.
+
+Cross-reference all three sources to reconstruct the most accurate and complete version.
+Where sources agree — use that value confidently.
+Where sources conflict — use the most readable and complete version.
+Where all sources are garbled for a cell — omit that value.
+
+Treat "ü" or "v" as checkmarks meaning YES.
+Ignore stray symbols, dots, and OCR artifacts that are clearly not data.
+Return a clean readable text summary of the table.
+Do not invent any values.

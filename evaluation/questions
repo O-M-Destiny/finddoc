@@ -1,0 +1,146 @@
+Tier 2 — Moderate (requires pulling a specific bio, slightly buried detail)
+
+Which director previously served on President Biden's Council of Advisors on Science and Technology (PCAST)?
+What company did Harvey Jones co-found in 1981, and what was it called?
+Which director serves on the board of Artisan Partners Asset Management, and since what year?
+
+These test whether the retriever surfaces the right director's bio when the question doesn't name them directly, or names a minor detail instead of the person.
+Tier 3 — Harder (cross-referencing / comparison across directors)
+
+Name two directors on this list who have "Financial/Financial Community" listed as one of their skill areas.
+Which two directors both previously served on public company boards that no longer appear as "Other Current Public Company Boards" (i.e., past board seats they've left)?
+Compare Robert Burgess and Harvey Jones's backgrounds — what industry experience do they share in common (hint: both have ties to a particular type of engineering/graphics-adjacent company)?
+
+Tier 4 — Hardest (needle-in-haystack / structural or negative questions)
+
+Which committee changes are scheduled to take effect after the 2025 Annual Meeting, and for which directors? (Tests whether footnote-style asterisked text — often mis-tagged by Unstructured as noise — survives cleaning.)
+According to the document, did the Nominating and Corporate Governance Committee (NCGC) receive any stockholder nominations during Fiscal 2025? (Tests retrieval of a small, easy-to-miss sentence near the "Proxy Access" section.)
+What specific criteria does the NCGC use to evaluate director nominees proposed by stockholders, and where should stockholders send such recommendations? (Tests whether a longer procedural passage — the kind remove_uncategorized() might wrongly flag as boilerplate — stays intact.)
+---------------------------------------------------------------------------
+
+
+Multi-Hop & Abstraction Questions
+These test whether your retriever can synthesize information scattered across different sections or infer meaning beyond direct keyword matching.
+
+Q5: cc
+
+Q6: Explain the concept of 'tokens of intelligence' as it relates to Nvidia's full-stack strategy for industrial-scale output.
+
+Q7: Under the domain of Advanced Manufacturing & Engineering, what are the primary computational tasks managed by the combination of cuLitho and cuPyNumeric?
+
+3. Comparative & Conceptual Questions
+These are excellent for testing your RAG pipeline's generation layer and dense vector retrieval, as they require distinguishing between opposing paradigms.
+
+Q8: Contrast the core operational pattern of a traditional computing system with that of an emerging 'AI Factory' as outlined in the text.
+
+Q9: What is the fundamental shift in the primary objective of computing infrastructure when moving from classical data lifecycles to generative computing frameworks?
+
+Q10: How does the role of CUDA-X differ from the underlying low-level Nvidia CUDA infrastructure in terms of developer abstraction?
+
+------------------------------------------------------------------------------------------
+
+Audit Committee
+What are the primary responsibilities of the Audit Committee at NVIDIA?
+Who is responsible for preparing NVIDIA's consolidated financial statements?
+What role did PricewaterhouseCoopers LLP play for Fiscal 2025?
+What authority does the Audit Committee have over the independent registered public accounting firm?
+How does the Audit Committee oversee NVIDIA's internal audit function?
+Why does the Audit Committee state that it does not duplicate the work of management or the external auditor?
+What discussions took place between the Audit Committee and PwC before recommending the financial statements?
+What recommendation did the Audit Committee ultimately make to the Board regarding the Fiscal 2025 financial statements?
+Which individuals served on NVIDIA's Audit Committee?
+Proposal 4 — Removal of Supermajority Provisions
+What is Proposal 4 asking shareholders to approve?
+Why did NVIDIA's Board decide to propose eliminating the remaining supermajority voting provisions?
+What voting threshold is currently required to remove directors without cause?
+How would Proposal 4 change the voting requirement for removing directors without cause?
+Which sections of the Certificate of Incorporation currently require a supermajority vote?
+What additional non-substantive changes are included in the proposed amended Charter?
+What vote is required for Proposal 4 to pass?
+What is the effect of abstentions and broker non-votes for Proposal 4?
+When is the amended Charter expected to become effective if approved?
+Under what circumstances could the Board abandon the Charter amendment even after shareholder approval?
+Proposal 5 — Special Shareholder Meeting Improvement
+What change does the shareholder proposal seek regarding special shareholder meetings?
+Why does the proposal argue that the current one-year holding requirement makes the special meeting right ineffective?
+What ownership threshold is currently required to request a special shareholder meeting?
+Why does the Board oppose removing the one-year holding requirement?
+How does the Board compare the one-year holding requirement to SEC Rule 14a-8?
+What governance practices does the Board cite to demonstrate shareholder accountability?
+According to the Board, what risks could arise if the holding period were eliminated?
+What recommendation does the Board make regarding Proposal 5?
+Proposal 6 — Director Election Resignation Governance Policy
+What new resignation policy is requested by Proposal 6?
+What happens under the proposed policy if a director fails to receive majority support in two consecutive elections?
+How does NVIDIA's current resignation process work when a director fails to receive majority support?
+Why does the Board believe Proposal 6 would undermine its judgment?
+What evidence does the Board provide to show shareholder confidence in its directors?
+What recommendation does the Board make on Proposal 6?
+Proposal 7 — Workforce Data Reporting
+What additional workforce disclosures does Proposal 7 request?
+Why does the proposal claim NVIDIA's workforce transparency has declined?
+Which companies are identified as peers that publicly disclose EEO-1 data?
+According to the proposal, why is EEO-1 reporting valuable to investors?
+What workforce metrics are already disclosed in NVIDIA's Sustainability Report?
+Why does the Board believe EEOC job categories are not appropriate for describing NVIDIA's workforce?
+Which internal teams oversee NVIDIA's sustainability reporting?
+Why does the Board believe management is better positioned than shareholders to determine workforce reporting metrics?
+What recommendation does the Board make regarding Proposal 7?
+Equity Compensation
+How many securities were issuable upon vesting of outstanding RSUs and PSUs as of January 26, 2025?
+Why is the number of outstanding ESPP purchase rights not determinable?
+How many shares remained available under the 2007 Plan?
+How many shares remained available under the ESPP?
+How many RSUs and PSUs were granted during Fiscal 2025?
+How many of those grants were awarded to named executive officers?
+How many shares were purchased through the ESPP during Fiscal 2025?
+Section 16(a) Compliance
+Which individual failed to comply fully with Section 16(a) reporting requirements?
+How were the missing transactions eventually reported?
+Governance & Miscellaneous
+What should shareholders do if they want an additional copy of NVIDIA's Annual Report?
+Where can shareholders request information about the proponents of shareholder proposals?
+What did the Board state regarding other matters expected to be presented at the 2025 Meeting?
+Charter Amendments (Appendix A)
+How many shares of Common Stock is NVIDIA authorized to issue under the proposed Charter?
+How many shares of Preferred Stock is NVIDIA authorized to issue?
+What powers does the Board have regarding Preferred Stock series?
+How would the amendment change the voting requirement for amending the Bylaws?
+What happens to Article VII, paragraph B, if Proposal 4 is approved?
+How are vacancies on the Board filled under the proposed Charter?
+Under what circumstances may shareholders take action by written consent?
+Which Charter provisions concerning the Board's classification are being removed as obsolete?
+Multi-hop / Reasoning Questions
+Compare the current and proposed voting thresholds for removing directors without cause.
+How does Proposal 4 align with the shareholder-approved proposal from the 2024 Meeting?
+Explain how the Board balances shareholder rights with protection against short-term activist actions in Proposal 5.
+Compare NVIDIA's existing director resignation policy with the policy requested in Proposal 6.
+Why does the Board believe its existing workforce disclosures are more informative than the reporting requested in Proposal 7?
+What governance reforms does NVIDIA cite across Proposals 4, 5, and 6 to demonstrate responsiveness to shareholders?
+How do the responsibilities of management, PwC, and the Audit Committee differ in the financial reporting process?
+Summarize the major governance changes that would take effect if Proposal 4 is approved.
+What arguments does the Board use to justify rejecting each of the shareholder proposals (Proposals 5–7)?
+How do the proposed Charter amendments simplify NVIDIA's governance structure while preserving shareholder rights?
+
+------------------------------------------------------------------------------
+
+Good — let's specifically retest the cases we know were broken, plus a couple of fresh ones to keep things honest.
+
+## Retest set (confirms the fix actually worked)
+
+**1.** What company does Tench Coxe serve as a director of, and since what year?
+*(This is the exact Artisan Partners question that failed twice before — his name and table were split into separate chunks. Should now come back as one clean, attributed hit.)*
+
+**2.** What is Harvey C. Jones's age, and what committees does he serve on?
+*(Same orphaning bug, different director — his Age: 72/Committees table had no name attached before.)*
+
+**3.** Which director has "Financial Expert" status and serves on the board of Tenable Holdings?
+*(This was the anonymous director from your Q2 skills test — we never confirmed who it actually was. Good test of whether the fix resolves a case we hadn't even identified by name yet.)*
+
+## One fresh question (untested territory)
+
+**4.** What was NVIDIA's net cash provided by operating activities for fiscal year 2025, and how does it compare to fiscal 2024?
+*(Pulls from the Cash Flow Statement section — another orphaned-header case we found in the raw chunk dump (`593` → `594`) but never actually tested through the retriever. Good chance to confirm the financial-statement side of the fix too.)*
+
+Run these through your retriever and paste the hits — especially interested in #1 and #3, since those are your clearest before/after proof points.
+

@@ -1,0 +1,7 @@
+Answer the question using only the information in the chunks below. If the chunks don't contain enough information to answer, say so clearly rather than guessing. When you use information from a chunk, cite the page number in brackets, like [Page 12].
+
+{context}
+
+Question: {question}
+
+Answer:

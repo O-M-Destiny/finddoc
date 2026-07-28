@@ -1,0 +1,13 @@
+Given the conversation history and a follow-up question, decide if the follow-up depends on the history to be understood.
+
+If it does, rewrite it into a standalone question that contains all necessary context from the history. If it does not — i.e. it's already a complete, self-contained question — return it exactly as-is.
+
+Do not answer the question. Only return the standalone question, nothing else.
+
+History:
+{history}
+
+Follow-up question:
+{question}
+
+Standalone question:
