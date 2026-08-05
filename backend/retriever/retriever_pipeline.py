@@ -8,7 +8,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
 from langchain_core.documents import Document
 
-from sentence_transformers import CrossEncoder
+# from sentence_transformers import CrossEncoder
 
 from .fusion.rrf import reciprocal_rank_fusion
 from ..vector_database.vector_database import VectorStore
@@ -16,7 +16,7 @@ from ..pydantic_schema.structured_model_output import generate_queries
 
 load_dotenv()
 
-os.environ['HF_HUB_OFFLINE'] = "1"
+# os.environ['HF_HUB_OFFLINE'] = "1"
 
 # CHUNKS_PATH = os.path.join(os.path.dirname(__file__), "json_database", "final_processed_chunks_FIXED.json")
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +29,7 @@ class RAGRetriever:
         self.vstore_manager = VectorStore(model_name=model_name)
         self.db: FAISS = self.vstore_manager.load_existing_db()
         self.llm = ChatGroq(model=llm_model)
-        self.reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+        # self.reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
         
         self.bm25_retriever = None
         self._init_bm25(chunks_path)
