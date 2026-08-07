@@ -7,7 +7,7 @@ from ..retriever.retriever_pipeline import RAGRetriever
 from ..generation.generation import AnswerGenerator
 from .schemas import QuestionRequest, AnswerResponse
 
-app = FastAPI(title="My Rag App")
+app = FastAPI(title="FindDoc")
 
 app.add_middleware(
     CORSMiddleware,
