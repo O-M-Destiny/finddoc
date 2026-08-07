@@ -4,7 +4,7 @@ import re
 from dotenv import load_dotenv
 
 from langchain_community.retrievers import BM25Retriever
-from langchain_community.vectorstores import FAISS
+from langchain_qdrant import QdrantVectorStore
 from langchain_groq import ChatGroq
 from langchain_core.documents import Document
 
@@ -27,7 +27,7 @@ CHUNKS_PATH = os.path.join(BASE_DIR, "json_database", "final_processed_chunks_FI
 class RAGRetriever:
     def __init__(self, llm_model: str , model_name: str = "BAAI/bge-large-en-v1.5", chunks_path: str = CHUNKS_PATH):
         self.vstore_manager = VectorStore(model_name=model_name)
-        self.db: FAISS = self.vstore_manager.load_existing_db()
+        self.db: QdrantVectorStore = self.vstore_manager.load_existing_db()
         self.llm = ChatGroq(model=llm_model)
         # self.reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
         
