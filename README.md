@@ -2,13 +2,13 @@
 
 **FindDoc** is an AI-powered Retrieval-Augmented Generation (RAG) application that allows users to ask natural language questions about NVIDIA's 2025 Annual Report and receive accurate, context-aware answers with supporting citations.
 
-The project demonstrates a production-oriented RAG pipeline built with FastAPI, Streamlit, FAISS, Redis, and LangChain.
+The project demonstrates a production-oriented RAG pipeline built with FastAPI, Streamlit, QDRANT, Redis, and LangChain.
 
 ---
 
 ## Features
 
-* Semantic search using **FAISS**
+* Semantic search using **QDRANT**
 * Hybrid retrieval (Dense + BM25)
 * Streaming responses with **FastAPI Server-Sent Events (SSE)**
 * Multi-query retrieval for improved recall
@@ -16,7 +16,6 @@ The project demonstrates a production-oriented RAG pipeline built with FastAPI, 
 * Follow-up question support
 * Streamlit chat interface
 * PDF preprocessing and caching for faster startup
-* Prebuilt FAISS index included for quick setup
 
 ---
 
@@ -26,7 +25,8 @@ The project demonstrates a production-oriented RAG pipeline built with FastAPI, 
 
 * FastAPI
 * LangChain
-* FAISS
+* QDRANT
+* HuggingFace API
 * Redis
 * Sentence Transformers
 * Groq LLM
@@ -44,23 +44,30 @@ The project demonstrates a production-oriented RAG pipeline built with FastAPI, 
 ## Project Structure
 
 ```text
-Rag/
+FindDoc/
 │
 ├── backend/
 │   ├── api/
+│   ├── chunking/
 │   ├── generation/
+│   ├── ingestion/
+│   ├── json_database/
+│   ├── partitioned_dataset/
+│   ├── pdf/
+│   ├── prompts/
+│   ├── pydantic_schema/
 │   ├── retriever/
-│   ├── cache/
-│   ├── faiss_index/
-│   ├── data/
+│   ├── vector_database(It is in the Cloud (Qdrant))/
 │   └── requirements.txt
 │
 ├── frontend/
 │   ├── app.py
+│   ├── example_questions.json
 │   └── requirements.txt
 │
 ├── README.md
 └── .gitignore
+└── LICENSE
 ```
 
 backend/json_database/
@@ -81,9 +88,9 @@ backend/json_database/
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/finddoc-rag.git
+git clone https://github.com/<your-username>/finddoc.git
 
-cd finddoc-rag
+cd finddoc
 ```
 
 ---
@@ -135,12 +142,8 @@ streamlit run frontend/app.py
 This repository includes:
 
 * The original NVIDIA Annual Report PDF
-* The preprocessed cache
-* A prebuilt FAISS index
 
 These are intentionally committed to the repository so contributors and reviewers can run the project immediately without waiting for document parsing, embedding generation, or index creation.
-
-If you'd like to regenerate everything from scratch, simply delete the cache and FAISS index folders and rerun the ingestion pipeline.
 
 ---
 
