@@ -1,20 +1,22 @@
-Tier 2 — Moderate (requires pulling a specific bio, slightly buried detail)
-
 Which director previously served on President Biden's Council of Advisors on Science and Technology (PCAST)?
 What company did Harvey Jones co-found in 1981, and what was it called?
 Which director serves on the board of Artisan Partners Asset Management, and since what year?
 
 These test whether the retriever surfaces the right director's bio when the question doesn't name them directly, or names a minor detail instead of the person.
-Tier 3 — Harder (cross-referencing / comparison across directors)
 
 Name two directors on this list who have "Financial/Financial Community" listed as one of their skill areas.
+
 Which two directors both previously served on public company boards that no longer appear as "Other Current Public Company Boards" (i.e., past board seats they've left)?
+
+
 Compare Robert Burgess and Harvey Jones's backgrounds — what industry experience do they share in common (hint: both have ties to a particular type of engineering/graphics-adjacent company)?
 
-Tier 4 — Hardest (needle-in-haystack / structural or negative questions)
 
 Which committee changes are scheduled to take effect after the 2025 Annual Meeting, and for which directors? (Tests whether footnote-style asterisked text — often mis-tagged by Unstructured as noise — survives cleaning.)
+
 According to the document, did the Nominating and Corporate Governance Committee (NCGC) receive any stockholder nominations during Fiscal 2025? (Tests retrieval of a small, easy-to-miss sentence near the "Proxy Access" section.)
+
+
 What specific criteria does the NCGC use to evaluate director nominees proposed by stockholders, and where should stockholders send such recommendations? (Tests whether a longer procedural passage — the kind remove_uncategorized() might wrongly flag as boilerplate — stays intact.)
 ---------------------------------------------------------------------------
 
@@ -22,20 +24,19 @@ What specific criteria does the NCGC use to evaluate director nominees proposed 
 Multi-Hop & Abstraction Questions
 These test whether your retriever can synthesize information scattered across different sections or infer meaning beyond direct keyword matching.
 
-Q5: cc
 
-Q6: Explain the concept of 'tokens of intelligence' as it relates to Nvidia's full-stack strategy for industrial-scale output.
+Explain the concept of 'tokens of intelligence' as it relates to Nvidia's full-stack strategy for industrial-scale output.
 
-Q7: Under the domain of Advanced Manufacturing & Engineering, what are the primary computational tasks managed by the combination of cuLitho and cuPyNumeric?
+Under the domain of Advanced Manufacturing & Engineering, what are the primary computational tasks managed by the combination of cuLitho and cuPyNumeric?
 
-3. Comparative & Conceptual Questions
+Comparative & Conceptual Questions
 These are excellent for testing your RAG pipeline's generation layer and dense vector retrieval, as they require distinguishing between opposing paradigms.
 
-Q8: Contrast the core operational pattern of a traditional computing system with that of an emerging 'AI Factory' as outlined in the text.
+Contrast the core operational pattern of a traditional computing system with that of an emerging 'AI Factory' as outlined in the text.
 
-Q9: What is the fundamental shift in the primary objective of computing infrastructure when moving from classical data lifecycles to generative computing frameworks?
+What is the fundamental shift in the primary objective of computing infrastructure when moving from classical data lifecycles to generative computing frameworks?
 
-Q10: How does the role of CUDA-X differ from the underlying low-level Nvidia CUDA infrastructure in terms of developer abstraction?
+How does the role of CUDA-X differ from the underlying low-level Nvidia CUDA infrastructure in terms of developer abstraction?
 
 ------------------------------------------------------------------------------------------
 
@@ -124,23 +125,17 @@ How do the proposed Charter amendments simplify NVIDIA's governance structure wh
 
 ------------------------------------------------------------------------------
 
-Good — let's specifically retest the cases we know were broken, plus a couple of fresh ones to keep things honest.
 
-## Retest set (confirms the fix actually worked)
+What company does Tench Coxe serve as a director of, and since what year?
 
-**1.** What company does Tench Coxe serve as a director of, and since what year?
-*(This is the exact Artisan Partners question that failed twice before — his name and table were split into separate chunks. Should now come back as one clean, attributed hit.)*
 
-**2.** What is Harvey C. Jones's age, and what committees does he serve on?
-*(Same orphaning bug, different director — his Age: 72/Committees table had no name attached before.)*
+What is Harvey C. Jones's age, and what committees does he serve on?
 
-**3.** Which director has "Financial Expert" status and serves on the board of Tenable Holdings?
-*(This was the anonymous director from your Q2 skills test — we never confirmed who it actually was. Good test of whether the fix resolves a case we hadn't even identified by name yet.)*
+Which director has "Financial Expert" status and serves on the board of Tenable Holdings?
 
-## One fresh question (untested territory)
 
-**4.** What was NVIDIA's net cash provided by operating activities for fiscal year 2025, and how does it compare to fiscal 2024?
-*(Pulls from the Cash Flow Statement section — another orphaned-header case we found in the raw chunk dump (`593` → `594`) but never actually tested through the retriever. Good chance to confirm the financial-statement side of the fix too.)*
+What was NVIDIA's net cash provided by operating activities for fiscal year 2025, and how does it compare to fiscal 2024?
 
-Run these through your retriever and paste the hits — especially interested in #1 and #3, since those are your clearest before/after proof points.
+
+
 
