@@ -35,6 +35,6 @@ def chat_stream(request: QuestionRequest):
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 def health():
     return {"status": "ok"}
